@@ -1,6 +1,28 @@
-def main():
-    print('My first git program')
+from flask import Flask
 
+app `= Flask(__name__)
+
+
+@app.route('/')
+def index():
+    return "Миссия Колонизация Марса"
+
+
+@app.route('/index')
+def mars():
+    return "И на Марсе будут яблони цвести!"
+
+@app.route('/promotion')
+def promotion():
+    return """Человечество вырастает из детства.
+
+Человечеству мала одна планета.
+
+Мы сделаем обитаемыми безжизненные пока планеты.
+
+И начнем с Марса!
+
+Присоединяйся!"""
 
 if __name__ == '__main__':
-    main()
+    app.run(port=8080, host='127.0.0.1')
